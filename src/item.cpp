@@ -33,3 +33,34 @@ int Item::getAtk() {
 int Item::getDef() {
   return def;
 }
+
+
+// Sword funcs
+
+
+// Armor funcs
+
+
+// Potion funcs
+int Potion::getHealing() {
+  return healing;
+}
+
+
+// Chest funcs
+void Chest::openChest() {
+  int a = rand() % 10 + 1;
+  int b = rand() % 10 + 1;
+  int c = rand() % 10 + 1;
+  chest.push_back(a);
+  chest.push_back(b);
+  chest.push_back(c);
+  slowText("You open the chest...\n");
+  slowText("You got: \n");
+  slowText(to_string(a));
+  cout << "\n";
+  slowText(to_string(b));
+  cout << "\n";
+  slowText(to_string(c));
+  cout << "\n";
+}

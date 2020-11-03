@@ -1,19 +1,20 @@
+#pragma once
 #include <string>
+#include <vector>
 
 using namespace std;
 
 class Item {
-private:
+protected:
   string name;
   string type;
   int atk;
   int def;
+  int healing;
 public:
-  Item(string itemName, string itemType, int itemAtk = 0, int itemDef = 0) {
+  Item(string itemName, string itemType) {
     name = itemName;
     type = itemType;
-    atk = itemAtk;
-    def = itemDef;
   }
 
   void getInfo();
@@ -23,16 +24,34 @@ public:
   int getDef();
 };
 
-/*
-class Potion {
-private:
-  string name;
-  int hlthChange;
+class Sword: public Item {
 public:
-  Potion(string potionName, int potionHealth) {
-    name = potionName;
-    hlthChange = potionHealth;
+  Sword(string itemName, int swdAtk, string itemType = "sword") : Item(itemName, itemType) {
+    atk = swdAtk;
   }
-  ~Potion();
 };
-*/
+
+class Armor: public Item {
+public:
+  Armor(string itemName, int armDef, string itemType = "armor") : Item(itemName, itemType) {
+    def = armDef;
+  }
+};
+
+class Potion: public Item {
+public:
+  Potion(string itemName, int potHealing, string itemType = "potion") : Item(itemName, itemType) {
+    healing = potHealing;
+  }
+
+  int getHealing();
+};
+
+class Chest: public Item {
+private:
+  vector<int> chest;
+public:
+  Chest(string itemName, string itemType = "chest") : Item(itemName, itemType) {}
+
+  void openChest();
+};

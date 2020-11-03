@@ -1,6 +1,3 @@
-#include <iostream>
-#include <string>
-#include <vector>
 #include "item.h"
 
 using namespace std;

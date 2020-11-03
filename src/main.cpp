@@ -1,10 +1,12 @@
 #include <iostream>
 #include <string>
 #include <windows.h>
+#include "../include/item.h"
 #include "../include/funcs.h"
 #include "../include/global.h"
 #include "../include/tinyxml2.h"
 #include "../include/player.h"
+#include "../include/inventory.h"
 
 
 
@@ -31,12 +33,15 @@ int main() {
   Player player(name);
   clearScreen();
   Inventory inventory;
-  Item sword("Sword 1", "sword", 5);
-  Item sword2("Sword 2", "sword", 5);
 
-  inventory.addItem(sword);
-  inventory.addItem(sword2);
+  Potion pot("Test Potion", 100);
 
-  inventory.search("SworD");
+  inventory.addItem(pot);
+  inventory.showInventory();
 
+  player.usePotion(pot);
+  cout << "\n\n\n";
+
+  Chest test("Test Chest");
+  test.openChest();
 }

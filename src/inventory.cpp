@@ -4,6 +4,7 @@
 #include <iterator>
 #include "../include/inventory.h"
 #include "../include/funcs.h"
+#include "../include/item.h"
 
 using namespace std;
 

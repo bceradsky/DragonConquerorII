@@ -1,10 +1,10 @@
-#include <string>
-#include <vector>
-#include "inventory.h"
+#include "item.h"
 
+#include <vector>
+#include <iostream>
+#include <string>
 
 using namespace std;
-
 class Player {
 private:
   string name;
@@ -26,4 +26,7 @@ public:
   void equip(Item item);
   void showEquipped();
   void doEquip(Item item);
+  void healthChange(int chg);
+  void usePotion(Potion p);
+  void useItem(Item item);
 };

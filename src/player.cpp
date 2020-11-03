@@ -65,3 +65,18 @@ void Player::showEquipped() {
     cout << holding[i].getName() << "\n";
   }
 }
+
+void Player::healthChange(int chg) {
+  slowText("Current Health: ");
+  slowText(to_string(getHealth()));
+  cout << ".\n";
+  health += chg;
+  slowText("Updated Health: ");
+  slowText(to_string(getHealth()));
+  cout << ".\n";
+}
+
+void Player::usePotion(Potion p) {
+  slowText("You decide to drink the potion.\n");
+  healthChange(p.getHealing());
+}
