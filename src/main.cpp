@@ -37,4 +37,6 @@ int main() {
   inventory.addItem(sword);
   inventory.addItem(sword2);
 
+  inventory.search("SworD");
+
 }

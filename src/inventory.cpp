@@ -21,9 +21,7 @@ void Inventory::addItem(Item item) {
 }
 
 void Inventory::search(string s) {
-  for (int i = 0; i < s.size(); i++) {
-    tolower(s[i]);
-  }
+  s = lowercase(s);
   bool found = false;
   for (int i = 0; i < inventory.size(); i++) {
     string temp = inventory[i].getType();

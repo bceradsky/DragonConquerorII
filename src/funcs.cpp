@@ -84,3 +84,11 @@ void exitScreen() {
   const char* exit_text = doc.FirstChildElement("Root")->FirstChildElement("exit_text")->GetText();
   slowText(exit_text, 1);
 }
+
+string lowercase(string in) {
+  string out;
+  for (int i = 0; i < in.size(); i++) {
+    out.push_back(tolower(in[i]));
+  }
+  return out;
+}
